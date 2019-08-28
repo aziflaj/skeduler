@@ -1,2 +1,9 @@
-@import "materialize";
+$blue: #4AA3FF;
+$darker-blue: #226AB3;
+$redish: #FF6D63;
+$greenish: #BBCC27;
+$darker-greenish: #A4B32B;
 
+$primary-color: $blue !default;
+$secondary-color: $darker-blue !default;
+@import "materialize";

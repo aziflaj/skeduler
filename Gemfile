@@ -21,11 +21,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rubocop-rails', '~> 2.3', '>= 2.3.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop-rails', '~> 2.3', '>= 2.3.1'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
