@@ -10,11 +10,15 @@
 </head>
 
 <body>
-<%= render 'shared/header' %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
-<%= render 'shared/footer' %>
-<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= render 'shared/header' %>
+  <%= render 'shared/flash' %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <%= render 'shared/footer' %>
+
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </body>
 </html>
