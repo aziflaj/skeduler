@@ -18,15 +18,12 @@ class User < ApplicationRecord
   # Needed to login users with email or username
   # @see https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   def self.find_for_database_authentication(warden_conditions)
-    binding.pry
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
     if login
-      where(conditions.to_hash)
-        .where(['lower(username) = :value OR lower(email) = :value', value: login.downcase])
-        .first
+      where(conditions.to_hash).find_by(['lower(username) = :value OR lower(email) = :value', value: login.downcase])
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
-      where(conditions.to_hash).first
+      find_by(conditions.to_hash)
     end
   end
 end
