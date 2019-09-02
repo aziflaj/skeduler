@@ -1,1 +1,2 @@
 //= require materialize
+//= require dashboard

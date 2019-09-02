@@ -1,3 +1,20 @@
-<div class="valign-wrapper">
-  <h2 class="center-align">Welcome <%= current_user.username %></h2>
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a href="#test1">Upcoming Meetings</a></li>
+      <li class="tab col s3"><a href="#test2">Free Slots</a></li>
+    </ul>
+  </div>
+  <div id="test1" class="col s12">
+    <%= render 'slots/upcoming' %>
+  </div>
+  <div id="test2" class="col s12">
+    <%= render 'slots/free' %>
+  </div>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large">
+      <i class="large material-icons">add</i>
+    </a>
+  </div>
 </div>
