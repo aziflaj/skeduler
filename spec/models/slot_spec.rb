@@ -6,7 +6,6 @@ RSpec.describe Slot, type: :model do
   it { should belong_to(:user).dependent(:destroy).required }
 
   # email validation
-  it { should validate_presence_of(:guest_email) }
   it { should allow_value('test@mail.com').for(:guest_email) }
   it { should_not allow_value('mail.com').for(:guest_email) }
   it { should_not allow_value('test').for(:guest_email) }
