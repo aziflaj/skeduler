@@ -6,11 +6,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const fabs = document.querySelectorAll('.fixed-action-btn');
   M.FloatingActionButton.init(fabs);
+
+  const modals = document.querySelectorAll('.modal');
+  M.Modal.init(modals);
+
+  const datepickers = document.querySelectorAll('.datepicker');
+  M.Datepicker.init(datepickers);
+
+  const timepickers = document.querySelectorAll('.timepicker');
+  M.Timepicker.init(timepickers);
 });
 
 const loadData = async () => {
-  const free_slots_response = await fetch('/free_slots');
-  const upcoming_meetings_response = await fetch('/upcoming_meetings');
+  const free_slots_response = await fetch('/slots/free');
+  const upcoming_meetings_response = await fetch('/slots/upcoming');
 
   window.slots = {
     upcoming: await upcoming_meetings_response.json(),

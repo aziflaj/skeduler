@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#index'
 
-  get 'free_slots', to: 'slots#free'
-  get 'upcoming_meetings', to: 'slots#upcoming'
+  resources :slots, only: :create do
+    collection do
+      get 'free'
+      get 'upcoming'
+    end
+  end
 end

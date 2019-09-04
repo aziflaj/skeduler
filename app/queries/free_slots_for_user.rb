@@ -5,7 +5,9 @@ module FreeSlotsForUser
     end
 
     def call
-      Slot.where(user: user, guest_email: [nil, ''])
+      Slot
+        .where(user: user, guest_email: [nil, ''])
+        .order(:scheduled_at)
     end
 
     private

@@ -5,7 +5,10 @@ module UpcomingSlotsForUser
     end
 
     def call
-      Slot.where(user: user).where.not(guest_email: [nil, ''])
+      Slot
+        .where(user: user)
+        .where.not(guest_email: [nil, ''])
+        .order(:scheduled_at)
     end
 
     private

@@ -1,0 +1,25 @@
+<div id="slot-creation-modal" class="modal">
+  <%= form_with model: Slot.new, html: { class: 'new-slot' } do |f| %>
+    <div class="modal-content">
+      <h4>Create a new slot</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">date_range</i>
+          <%= f.text_field :scheduled_at_date, class: 'datepicker', placeholder: 'Scheduled date' %>
+        </div>
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">access_time</i>
+          <%= f.text_field :scheduled_at_time, class: 'timepicker', placeholder: 'Scheduled time' %>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">event_note</i>
+          <%= f.text_area :notes, placeholder: 'Notes', rows: 10 %>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit 'Create slot', class: 'modal-close waves-effect waves-green btn-flat' %>
+    </div>
+  <% end %>
+</div>
