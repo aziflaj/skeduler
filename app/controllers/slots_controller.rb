@@ -1,6 +1,9 @@
 class SlotsController < ApplicationController
   protect_from_forgery with: :null_session
 
+  def new
+  end
+
   def create
     slot = Slots::Builder.new(current_user, params).call
 
